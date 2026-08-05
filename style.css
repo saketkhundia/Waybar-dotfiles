@@ -1,0 +1,257 @@
+/* -----------------------------------------------------
+ * Waybar Style
+ * ----------------------------------------------------- */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+/* Transparent background */
+window#waybar {
+    background: transparent;
+    color: #ECEFF4;
+}
+
+/* Workspace container */
+#workspaces {
+    background: rgba(22, 22, 22, 0.90);
+    margin: 8px;
+    padding: 4px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+#workspaces button {
+    color: #888888;
+    background: transparent;
+    padding: 0 6px;
+    margin: 3px;
+    border-radius: 10px;
+    transition: all 0.2s ease-out;
+}
+
+#workspaces button:hover {
+    background: rgba(255,255,255,0.08);
+    color: #ffffff;
+}
+
+#workspaces button.active {
+    background: #ffffff;
+    color: #000000;
+}
+
+#workspaces button.urgent {
+    background: #ff5555;
+    color: white;
+}
+
+/* Common floating modules */
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#bluetooth,
+#custom-media {
+    background: rgba(22,22,22,0.90);
+    color: #ECEFF4;
+    margin: 8px 5px;
+    padding: 0 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: all .25s ease;
+}
+
+/* Hover Animation */
+
+#clock:hover,
+#battery:hover,
+#network:hover,
+#pulseaudio:hover,
+#bluetooth:hover,
+#custom-media:hover {
+    background: rgba(45,45,45,0.95);
+    border-color: rgba(255,255,255,0.18);
+}
+
+/* Clock */
+
+#clock {
+    color: #ffffff;
+}
+
+/* Network */
+
+#network {
+    color: #8FBCBB;
+}
+
+#network.disconnected {
+    color: #BF616A;
+}
+
+/* Bluetooth */
+
+#bluetooth {
+    color: #81A1C1;
+}
+
+#bluetooth.disabled {
+    color: #666666;
+}
+
+/* Audio */
+
+#pulseaudio {
+    color: #A3BE8C;
+}
+
+#pulseaudio.muted {
+    color: #888888;
+}
+
+/* Battery */
+
+#battery {
+    color: #EBCB8B;
+}
+
+#battery.warning {
+    color: #ffb74d;
+}
+
+#battery.critical {
+    color: #ff5555;
+}
+
+#battery.charging {
+    color: #7CFC00;
+}
+
+/* Media */
+
+#custom-media {
+    color: #B48EAD;
+}
+
+/* Tooltip */
+
+tooltip {
+    background: rgba(25,25,25,0.96);
+    color: white;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+tooltip label {
+    padding: 4px;
+}
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+#taskbar {
+    background: rgba(22,22,22,0.90);
+    margin: 8px;
+    padding: 4px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+#taskbar button {
+    min-width: 0;
+    min-height: 0;
+
+    padding: 6px;
+    margin: 2px;
+
+    background: transparent;
+    border-radius: 12px;
+}
+
+#taskbar image {
+    padding: 0;
+    margin: 0;
+}
+#taskbar button:first-child {
+    margin-left: 0;
+}
+
+#taskbar button:last-child {
+    margin-right: 0;
+}
+
+#taskbar {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+#taskbar button:hover {
+    background: rgba(255,255,255,0.10);
+}
+
+#taskbar button.active {
+    background: #ffffff;
+    color: #000000;
+    padding:2px 6px;
+    min-width: 20px;
+}
+
+#taskbar button.minimized {
+    opacity: 0.55;
+}
+
+#taskbar button.urgent {
+    background: #ff5555;
+    color: white;
+}
+
+#taskbar image {
+    padding: 4px;
+}
+
+tooltip {
+    background: rgba(20,20,20,0.96);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 10px;
+}
+
+tooltip label {
+    color: #ECEFF4;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    padding: 6px;
+}
+
+#mpris {
+    background: rgba(22, 22, 22, 0.90);
+
+    color: #ebdbb2;
+
+    margin: 8px 4px;
+    padding: 0 10px;
+
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+
+    min-width: 0;
+}
+
+#mpris label {
+    padding: 0;
+    margin: 0;
+}
+
+#mpris:hover {
+    background: rgba(45,45,45,0.95);
+}
+
+#mpris.paused {
+    color: #a89984;
+}
