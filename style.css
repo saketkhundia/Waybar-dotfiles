@@ -1,257 +1,388 @@
-/* -----------------------------------------------------
- * Waybar Style
- * ----------------------------------------------------- */
+/* ═════════════════════════════════════════════════════════════
+   MINIMAL macOS-STYLE WAYBAR
+   ═════════════════════════════════════════════════════════════ */
 
 * {
-    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", sans-serif;
-    font-size: 13px;
-    font-weight: 600;
     border: none;
-    border-radius: 0;
     min-height: 0;
+
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    font-weight: 500;
 }
 
-/* Transparent background */
+
+/* ═════════════════════════════════════════════════════════════
+   MAIN BAR
+   ═════════════════════════════════════════════════════════════ */
+
 window#waybar {
-    background: transparent;
-    color: #ECEFF4;
+    background: rgba(20, 20, 20, 0.72);
+
+    color: rgba(255, 255, 255, 0.92);
+
+    padding: 0;
 }
 
-/* Workspace container */
+
+/* ═════════════════════════════════════════════════════════════
+   ARCH
+   ═════════════════════════════════════════════════════════════ */
+
+#custom-arch {
+    min-width: 28px;
+    min-height: 26px;
+
+    margin-left: 7px;
+    margin-right: 2px;
+
+    padding: 0 6px;
+
+    color: #1793d1;
+    background: transparent;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    border-radius: 5px;
+
+    transition: color 150ms ease,
+                background 150ms ease;
+}
+
+#custom-arch:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+
+/* ═════════════════════════════════════════════════════════════
+   WORKSPACES
+   ═════════════════════════════════════════════════════════════ */
+
 #workspaces {
-    background: rgba(22, 22, 22, 0.90);
-    margin: 8px;
-    padding: 4px;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.08);
+    margin-left: 2px;
+    padding: 0;
 }
 
 #workspaces button {
-    color: #888888;
-    background: transparent;
+    min-width: 18px;
+    min-height: 26px;
+
+    margin: 0;
     padding: 0 6px;
-    margin: 3px;
-    border-radius: 10px;
-    transition: all 0.2s ease-out;
+
+    color: rgba(255, 255, 255, 0.48);
+    background: transparent;
+
+    border-radius: 5px;
+
+    transition: color 150ms ease,
+                background 150ms ease;
 }
 
 #workspaces button:hover {
-    background: rgba(255,255,255,0.08);
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.90);
 }
 
 #workspaces button.active {
-    background: #ffffff;
-    color: #000000;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
 }
 
 #workspaces button.urgent {
-    background: #ff5555;
-    color: white;
+    color: #ff453a;
+    background: rgba(255, 69, 58, 0.10);
 }
 
-/* Common floating modules */
 
-#clock,
-#battery,
-#network,
-#pulseaudio,
-#bluetooth,
-#custom-media {
-    background: rgba(22,22,22,0.90);
-    color: #ECEFF4;
-    margin: 8px 5px;
-    padding: 0 18px;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: all .25s ease;
-}
-
-/* Hover Animation */
-
-#clock:hover,
-#battery:hover,
-#network:hover,
-#pulseaudio:hover,
-#bluetooth:hover,
-#custom-media:hover {
-    background: rgba(45,45,45,0.95);
-    border-color: rgba(255,255,255,0.18);
-}
-
-/* Clock */
-
-#clock {
-    color: #ffffff;
-}
-
-/* Network */
-
-#network {
-    color: #8FBCBB;
-}
-
-#network.disconnected {
-    color: #BF616A;
-}
-
-/* Bluetooth */
-
-#bluetooth {
-    color: #81A1C1;
-}
-
-#bluetooth.disabled {
-    color: #666666;
-}
-
-/* Audio */
-
-#pulseaudio {
-    color: #A3BE8C;
-}
-
-#pulseaudio.muted {
-    color: #888888;
-}
-
-/* Battery */
-
-#battery {
-    color: #EBCB8B;
-}
-
-#battery.warning {
-    color: #ffb74d;
-}
-
-#battery.critical {
-    color: #ff5555;
-}
-
-#battery.charging {
-    color: #7CFC00;
-}
-
-/* Media */
-
-#custom-media {
-    color: #B48EAD;
-}
-
-/* Tooltip */
-
-tooltip {
-    background: rgba(25,25,25,0.96);
-    color: white;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.08);
-}
-
-tooltip label {
-    padding: 4px;
-}
-/* -----------------------------------------------------
- * Taskbar
- * ----------------------------------------------------- */
+/* ═════════════════════════════════════════════════════════════
+   TASKBAR
+   ═════════════════════════════════════════════════════════════ */
 
 #taskbar {
-    background: rgba(22,22,22,0.90);
-    margin: 8px;
-    padding: 4px;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.08);
+    margin-left: 7px;
+    padding-left: 7px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 #taskbar button {
-    min-width: 0;
-    min-height: 0;
+    min-height: 26px;
 
-    padding: 6px;
-    margin: 2px;
-
-    background: transparent;
-    border-radius: 12px;
-}
-
-#taskbar image {
-    padding: 0;
     margin: 0;
-}
-#taskbar button:first-child {
-    margin-left: 0;
-}
+    padding: 0 6px;
 
-#taskbar button:last-child {
-    margin-right: 0;
-}
+    color: rgba(255, 255, 255, 0.60);
+    background: transparent;
 
-#taskbar {
-    padding-left: 2px;
-    padding-right: 2px;
+    opacity: 0.75;
+
+    border-radius: 5px;
+
+    transition: color 150ms ease,
+                background 150ms ease,
+                opacity 150ms ease;
 }
 
 #taskbar button:hover {
-    background: rgba(255,255,255,0.10);
+    color: #ffffff;
+    opacity: 1;
 }
 
 #taskbar button.active {
-    background: #ffffff;
-    color: #000000;
-    padding:2px 6px;
-    min-width: 20px;
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.09);
+
+    opacity: 1;
 }
 
-#taskbar button.minimized {
-    opacity: 0.55;
+
+/* ═════════════════════════════════════════════════════════════
+   CAVA
+   ═════════════════════════════════════════════════════════════ */
+
+#custom-cava {
+    padding: 0 8px;
+
+    color: rgba(255, 255, 255, 0.58);
 }
 
-#taskbar button.urgent {
-    background: #ff5555;
-    color: white;
-}
 
-#taskbar image {
-    padding: 4px;
-}
-
-tooltip {
-    background: rgba(20,20,20,0.96);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-    padding: 10px;
-}
-
-tooltip label {
-    color: #ECEFF4;
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 13px;
-    padding: 6px;
-}
+/* ═════════════════════════════════════════════════════════════
+   MEDIA
+   ═════════════════════════════════════════════════════════════ */
 
 #mpris {
-    background: rgba(22, 22, 22, 0.90);
+    padding: 0 8px;
 
-    color: #ebdbb2;
+    color: rgba(255, 255, 255, 0.62);
 
-    margin: 8px 4px;
-    padding: 0 10px;
+    border-radius: 5px;
 
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.08);
-
-    min-width: 0;
-}
-
-#mpris label {
-    padding: 0;
-    margin: 0;
+    transition: color 150ms ease,
+                background 150ms ease;
 }
 
 #mpris:hover {
-    background: rgba(45,45,45,0.95);
+    color: #ffffff;
 }
 
-#mpris.paused {
-    color: #a89984;
+
+/* ═════════════════════════════════════════════════════════════
+   CLOCK
+   ═════════════════════════════════════════════════════════════ */
+
+#clock {
+    min-height: 26px;
+
+    margin: 0 4px;
+    padding: 0 7px;
+
+    color: rgba(255, 255, 255, 0.94);
+
+    background: transparent;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    border-radius: 5px;
+
+    transition: background 150ms ease;
+}
+
+#clock:hover {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+
+/* ═════════════════════════════════════════════════════════════
+   SYSTEM STATUS
+   ═════════════════════════════════════════════════════════════ */
+
+#pulseaudio,
+#bluetooth,
+#network,
+#battery {
+    min-height: 26px;
+
+    margin: 0;
+    padding: 0 6px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    background: transparent;
+
+    border-radius: 5px;
+
+    transition: color 150ms ease,
+                background 150ms ease;
+}
+
+#pulseaudio:hover,
+#bluetooth:hover,
+#network:hover,
+#battery:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+
+/* ═════════════════════════════════════════════════════════════
+   AUDIO
+   ═════════════════════════════════════════════════════════════ */
+
+#pulseaudio {
+    margin-left: 3px;
+}
+
+#pulseaudio.muted {
+    color: rgba(255, 255, 255, 0.38);
+}
+
+
+/* ═════════════════════════════════════════════════════════════
+   BLUETOOTH
+   ═════════════════════════════════════════════════════════════ */
+
+#bluetooth {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+/* ═════════════════════════════════════════════════════════════
+   NETWORK
+   ═════════════════════════════════════════════════════════════ */
+
+#network {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#network.disconnected {
+    color: rgba(255, 255, 255, 0.38);
+}
+
+
+/* ═════════════════════════════════════════════════════════════
+   BATTERY
+   ═════════════════════════════════════════════════════════════ */
+
+#battery {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+#battery.warning {
+    color: #ffd60a;
+}
+
+#battery.critical {
+    color: #ff453a;
+}
+
+#battery.charging {
+    color: #30d158;
+}
+
+
+/* ═════════════════════════════════════════════════════════════
+   POWER
+   ═════════════════════════════════════════════════════════════ */
+
+#custom-power {
+    min-width: 24px;
+    min-height: 26px;
+
+    margin: 0 8px 0 2px;
+    padding: 0 5px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    background: transparent;
+
+    border-radius: 5px;
+
+    transition: color 150ms ease,
+                background 150ms ease;
+}
+
+#custom-power:hover {
+    color: #ff453a;
+    background: rgba(255, 69, 58, 0.08);
+}
+
+
+/* ═════════════════════════════════════════════════════════════
+   TRAY
+   ═════════════════════════════════════════════════════════════ */
+
+#tray {
+    margin: 0 2px;
+    padding: 0 4px;
+
+    background: transparent;
+}
+
+#tray > .passive {
+    opacity: 0.55;
+}
+
+#tray > .needs-attention {
+    opacity: 1;
+}
+
+
+/* ═════════════════════════════════════════════════════════════
+   TOOLTIP
+   ═════════════════════════════════════════════════════════════ */
+
+tooltip {
+    background: rgba(28, 28, 30, 0.96);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 6px;
+
+    padding: 6px 9px;
+}
+
+tooltip label {
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* ═════════════════════════════════════════════════════════════
+   NOTIFICATIONS
+   ═════════════════════════════════════════════════════════════ */
+
+#custom-notification {
+    min-width: 24px;
+    min-height: 26px;
+
+    margin: 0 2px;
+    padding: 0 6px;
+
+    color: rgba(255, 255, 255, 0.72);
+    background: transparent;
+
+    border-radius: 5px;
+
+    transition:
+        color 150ms ease,
+        background 150ms ease;
+}
+
+#custom-notification:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+#custom-notification.notification {
+    color: #ffffff;
+}
+
+#custom-notification.dnd-notification,
+#custom-notification.dnd-none {
+    color: rgba(255, 255, 255, 0.42);
 }
