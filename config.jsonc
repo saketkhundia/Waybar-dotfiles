@@ -10,12 +10,11 @@
         "custom/arch",
         "hyprland/workspaces",
         "wlr/taskbar"
-        
     ],
     "modules-center": [
         "clock",
         "custom/cava",
-        "mpris"
+        "custom/media"
     ],
     "modules-right": [
         "custom/notification",
@@ -53,22 +52,15 @@
     },
     "clock": {
         "interval": 1,
-        "format": "󰥔  {:%H:%M  ·  %a %d %b}",
-        "format-alt": "󰃭  {:%Y-%m-%d}",
+        "format": "{:%I:%M %p  ·  %A  ·  %d %B}",
+        "format-alt": "{:%A, %d %B %Y  ·  %I:%M:%S %p}",
         "tooltip": true,
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
             "mode-mon-col": 3,
             "weeks-pos": "right",
-            "on-scroll": 1,
-            "format": {
-                "months": "<span color='#ffffff'><b>{}</b></span>",
-                "days": "<span color='#c8c8c8'>{}</span>",
-                "weeks": "<span color='#555555'>{}</span>",
-                "weekdays": "<span color='#888888'><b>{}</b></span>",
-                "today": "<span color='#81a1c1'><b><u>{}</u></b></span>"
-            }
+            "on-scroll": 1
         },
         "actions": {
             "on-click-right": "mode",
@@ -82,10 +74,12 @@
         "restart-interval": 1
     },
     "mpris": {
-        "format": "󰎈  {title}  —  {artist}",
-        "format-paused": "󰏤  {title}",
+        "format": "{player_icon}  {title}  —  {artist}",
+        "format-paused": "{player_icon}  {title}  —  {artist}",
+        "format-stopped": "",
         "player-icons": {
             "firefox": "󰈹",
+            "chromium": "󰊯",
             "spotify": "",
             "default": ""
         },
@@ -158,23 +152,31 @@
         ]
     },
     "custom/power": {
-    "format": "⏻",
-    "tooltip": true,
-    "tooltip-format": "Power Menu",
-    "on-click": "wlogout"
-},
-"custom/arch": {
-    "format": "",
-    "tooltip": true,
-    "tooltip-text": "Arch Linux",
-    "on-click": "/home/saket/.config/rofi/launchers/type-2/launcher.sh"
-},
-"custom/notification": {
-    "format": "",
-    "tooltip": true,
-    "tooltip-format": "Notifications",
-    "on-click": "swaync-client -t",
-    "on-click-right": "swaync-client -C"
-}
-
+        "format": "⏻",
+        "tooltip": true,
+        "tooltip-format": "Power Menu",
+        "on-click": "wlogout"
+    },
+    "custom/arch": {
+        "format": "",
+        "tooltip": false,
+        "tooltip-text": false,
+        "on-click": "~/.config/rofi/scripts/launcher_t1"
+    },
+    "custom/notification": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Notifications",
+        "on-click": "swaync-client -t",
+        "on-click-right": "swaync-client -C"
+    },
+    "custom/media": {
+        "exec": "~/.config/waybar/scripts/media.sh",
+        "return-type": "json",
+        "interval": 1,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous",
+        "escape": true
+    },
 }
