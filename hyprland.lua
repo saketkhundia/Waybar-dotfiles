@@ -37,7 +37,7 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal    = "kitty"
-local fileManager = "thunar"
+local fileManager = "nautilus"
 local menu        = "hyprlauncher"
 
 
@@ -68,6 +68,9 @@ hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 --Toolkit Backend Variables 
 hl.env("GDK_BACKEND", "wayland,x11,*")
+-- Use OpenGL instead of Vulkan for GTK rendering: fixes ~2s delay
+-- recreating the Vulkan device when swaync reopens its panel (NVIDIA)
+hl.env("GSK_RENDERER", "gl")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("SDL_VIDEODRIVER", "wayland")
 hl.env("CLUTTER_BACKEND", "wayland")
@@ -290,7 +293,7 @@ local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("wlogout"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("~/.config/rofi/scripts/launcher_t1"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/saket/rofi/files/launchers/type-1/launcher.sh"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("pkill waybar; waybar &"))
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
