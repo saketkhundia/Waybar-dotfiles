@@ -17,8 +17,8 @@
         "JetBrainsMono Nerd Font",
         monospace;
 
-    font-size: 10px;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 700;
 
     color: rgba(255, 255, 255, 0.88);
 }
@@ -475,7 +475,7 @@ window#waybar {
 
 
 /* ═══════════════════════════════════════════════════════════════
-   VOLUME
+   VOLUME — LEFT SEGMENT OF CONNECTIVITY PILL
    ═══════════════════════════════════════════════════════════════ */
 
 #pulseaudio {
@@ -483,13 +483,15 @@ window#waybar {
     margin-top: 6px;
     margin-bottom: 6px;
     margin-left: 4px;
-    margin-right: 3px;
+    margin-right: 0;
 
     padding: 0 12px;
 
     color: @text_secondary;
 
-    border-radius: 18px;
+    border-radius: 18px 0 0 18px;
+
+    border-right: none;
 }
 
 
@@ -518,21 +520,24 @@ window#waybar {
 
 
 /* ═══════════════════════════════════════════════════════════════
-   BLUETOOTH
+   BLUETOOTH — MIDDLE SEGMENT OF CONNECTIVITY PILL
    ═══════════════════════════════════════════════════════════════ */
 
 #bluetooth {
 
     margin-top: 6px;
     margin-bottom: 6px;
-    margin-left: 3px;
-    margin-right: 3px;
+    margin-left: 0;
+    margin-right: 0;
 
     padding: 0 12px;
 
     color: @text_secondary;
 
-    border-radius: 18px;
+    border-radius: 0;
+
+    border-left: none;
+    border-right: none;
 }
 
 
@@ -561,21 +566,23 @@ window#waybar {
 
 
 /* ═══════════════════════════════════════════════════════════════
-   NETWORK
+   NETWORK — RIGHT SEGMENT OF CONNECTIVITY PILL
    ═══════════════════════════════════════════════════════════════ */
 
 #network {
 
     margin-top: 6px;
     margin-bottom: 6px;
-    margin-left: 3px;
-    margin-right: 3px;
+    margin-left: 0;
+    margin-right: 4px;
 
     padding: 0 12px;
 
     color: @text_secondary;
 
-    border-radius: 18px;
+    border-radius: 0 18px 18px 0;
+
+    border-left: none;
 }
 
 
